@@ -19,7 +19,7 @@ int main(){
 
     // 1 million steps
     int num_steps = 1000000;
-    int n_repeat = 50;
+    int n_repeat = 500;
 
     // mean pi value
     double serial_pi = 0;

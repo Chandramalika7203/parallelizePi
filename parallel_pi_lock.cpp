@@ -3,6 +3,7 @@
 #include <chrono>
 
 #define NUM_THREADS 4
+// #define NUM_THREADS 16
 
 double calculate_pi_critical (int num_steps){
 
@@ -37,7 +38,7 @@ double calculate_pi_critical (int num_steps){
 
 int main() {
     int num_steps = 1000000;
-    int n_repeat = 50;
+    int n_repeat = 500;
 
     // Calculate and display the value of pi
     double parallel_pi = 0;

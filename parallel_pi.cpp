@@ -3,6 +3,7 @@
 #include <chrono>
 
 #define NUM_THREADS 4
+// #define NUM_THREADS 16
 
 double calculate_parallel_pi (int num_steps){
 
@@ -35,7 +36,7 @@ double calculate_parallel_pi (int num_steps){
 
 int main() {
     int num_steps = 1000000;
-    int n_repeat = 50;
+    int n_repeat = 500;
 
     // Calculate and display the value of pi
     double parallel_pi = 0;
@@ -45,11 +46,11 @@ int main() {
     for (int i = 0; i < n_repeat ; i ++) parallel_pi += calculate_parallel_pi(num_steps);
     auto end_time = std::chrono::high_resolution_clock::now();
 
-    std::chrono::duration<double> serial_duration = end_time - start_time;
+    std::chrono::duration<double> parallel_duration = end_time - start_time;
 
     // Print average results
     std::cout << "Parallel Calculation of Pi: " << parallel_pi / n_repeat 
-              << std::endl << "Duration: " << serial_duration.count() / n_repeat << " seconds" << std::endl;
+              << std::endl << "Duration: " << parallel_duration.count() / n_repeat << " seconds" << std::endl;
     
     return 0;
 }
